@@ -4,7 +4,10 @@ import dotenv from "dotenv";
 
 async function main() {
   dotenv.config(); //load .env variables
-  const client = new mongodb.MongoClient(process.env.MOVIEREVIEWS_DB_URI);
+  const client = new mongodb.MongoClient(process.env.MOVIEREVIEWS_DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
   const port = process.env.PORT || 8000; //retrieve port & alt
   try {
     // Connect to the MongoDB cluster
