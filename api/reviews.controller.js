@@ -69,7 +69,7 @@ export default class ReviewsController {
       const userId = req.body.user_id;
 
       //ensure user deleting the view created the view
-      const ReviewResponse = await ReviewsDAO.apiDeleteReview(reviewId, userId);
+      const ReviewResponse = await ReviewsDAO.deleteReview(reviewId, userId);
       res.json({ status: "success " });
     } catch (e) {
       res.status(500).json({ error: e.message });
