@@ -1,6 +1,6 @@
 /*create movies controller that the route file will use to access the dao file.*/
 
-import MoviesDAO from "../dao/moviesDAO";
+import MoviesDAO from "../dao/moviesDAO.js";
 
 export default class MoviesController {
   //when apiGetMovies is called, there is a query string in response object(req.query)
